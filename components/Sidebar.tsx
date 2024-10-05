@@ -5,7 +5,7 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-gray-100 p-6">
       <nav className="space-y-4">
-        <Link href="/home" className="block font-semibold">Home</Link>
+        <Link href="/" className="block font-semibold">Home</Link>
         <Link href="/summaries" className="block">Summaries</Link>
         <Link href="/briefings" className="block">Briefings</Link>
         <Link href="/playlists" className="block">Playlists</Link>

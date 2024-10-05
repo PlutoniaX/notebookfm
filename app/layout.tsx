@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ClerkProvider, SignedIn, UserButton } from '@clerk/nextjs';
+import { ClerkProvider, SignedIn, SignedOut } from '@clerk/nextjs';
 import Link from 'next/link';
 
 const geistSans = localFont({
@@ -29,14 +29,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="p-4 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold">NotebookFM</Link>
-            <SignedIn>
-              <nav className="flex items-center space-x-4">
-                <Link href="/home">Home</Link>
-              </nav>
-            </SignedIn>
-          </header>
+          <SignedIn>
+            <header className="p-4 flex justify-between items-center">
+              <Link href="/" className="text-2xl font-bold">NotebookFM</Link>
+            </header>
+          </SignedIn>
+          <SignedOut>
+            <header className="p-4"></header>
+          </SignedOut>
           {children}
         </body>
       </html>
