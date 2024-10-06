@@ -1,4 +1,4 @@
-# Product Requirements Document (PRD) for ZenTube
+# Product Requirements Document (PRD) for NotebookFM
 
 ## Project Overview
 

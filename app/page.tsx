@@ -1,11 +1,6 @@
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Button } from '@/components/ui/button'
 import { Sidebar } from '@/components/Sidebar'
-import dynamic from 'next/dynamic'
-
-const PlaylistManager = dynamic(() => import('@/components/PlaylistManager').then(mod => mod.PlaylistManager), {
-  ssr: false
-})
 
 export default function HomePage() {
   return (
@@ -28,7 +23,19 @@ export default function HomePage() {
         <div className="flex h-screen">
           <Sidebar />
           <main className="flex-1 p-8">
-            <PlaylistManager />
+            <h1 className="text-3xl font-bold mb-6">Welcome to NotebookFM</h1>
+            <p className="text-lg mb-4">
+              Simplify your YouTube experience with NotebookFM - your personal video summarizer and podcast creator.
+            </p>
+            <ul className="list-disc list-inside mb-6">
+              <li>Save your favorite YouTube playlists</li>
+              <li>Get AI-generated summaries for each video</li>
+              <li>Receive daily briefings of new content</li>
+              <li>Listen to personalized daily podcasts</li>
+            </ul>
+            <p className="text-sm text-gray-600">
+              Start by adding a playlist or exploring your summaries in the sidebar.
+            </p>
           </main>
         </div>
       </SignedIn>
